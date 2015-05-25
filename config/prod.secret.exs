@@ -9,6 +9,7 @@ config :auth_example, AuthExample.Endpoint,
 # Configure your database
 config :auth_example, AuthExample.Repo,
   adapter: Ecto.Adapters.Postgres,
+  hostname: System.get_env("DB_HOSTNAME"),
   username: System.get_env("DB_USERNAME"),
   password: System.get_env("DB_PASSWORD"),
   database: System.get_env("DB_NAME"),
