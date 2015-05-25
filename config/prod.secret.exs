@@ -9,7 +9,7 @@ config :auth_example, AuthExample.Endpoint,
 # Configure your database
 config :auth_example, AuthExample.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "auth_example_prod",
+  username: System.get_env("DB_USERNAME"),
+  password: System.get_env("DB_PASSWORD"),
+  database: System.get_env("DB_NAME"),
   size: 20 # The amount of database connections in the pool
