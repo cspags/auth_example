@@ -1,0 +1,30 @@
+<h2>Listing accounts</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>TestApiKey</th>
+      <th>ProdApiKey</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for account <- @accounts do %>
+    <tr>
+      <td><%= account.name %></td>
+      <td><%= account.test_api_key %></td>
+      <td><%= account.prod_api_key %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: account_path(@conn, :show, account), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: account_path(@conn, :edit, account), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: account_path(@conn, :delete, account), method: :delete, class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New account", to: account_path(@conn, :new) %>

@@ -1,0 +1,22 @@
+<h2>Show account</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @account.name %>
+  </li>
+
+  <li>
+    <strong>TestApiKey:</strong>
+    <%= @account.test_api_key %>
+  </li>
+
+  <li>
+    <strong>ProdApiKey:</strong>
+    <%= @account.prod_api_key %>
+  </li>
+
+</ul>
+
+<%= link "Back", to: account_path(@conn, :index) %>
